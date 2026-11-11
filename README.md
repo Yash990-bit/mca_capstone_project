@@ -194,3 +194,4 @@ Field:                  TAG (5 bits)                    |  LINE INDEX (3 bits)
 | **Kaavya** | Testbenches & Simulation | Test vector generation, memory modeling, simulation scripts, GTKWave analysis |
 
 *(For full deliverable breakdowns, see [`docs/TEAM_RESPONSIBILITIES.md`](docs/TEAM_RESPONSIBILITIES.md).)*
+

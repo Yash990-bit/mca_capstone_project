@@ -99,3 +99,4 @@
    - Prior to coding RTL, Keshav, Shitanshu, and Shivam must review and sign off on module port names defined in `docs/ARCHITECTURE.md`.
 3. **Verification Sign-Off:**  
    - Any RTL module submitted for merge must be validated against Kaavya's baseline test vectors.
+

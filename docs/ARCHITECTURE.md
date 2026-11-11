@@ -215,3 +215,4 @@ During the verification phase, both caches will be subjected to identical synthe
 - **Hit Ratio:** $\frac{\text{Hits}}{\text{Hits} + \text{Misses}} \times 100\%$
 - **Conflict Miss Reduction:** Demonstrating scenarios where alternating addresses mapping to the same index cause continuous thrashing in the direct-mapped cache, but hit reliably in the 2-way cache.
 - **Access Latency:** Total cycle count to execute benchmark traces.
+

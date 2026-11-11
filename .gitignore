@@ -51,6 +51,9 @@ build/*
 !build/.gitkeep
 sim/*
 !sim/.gitkeep
+!sim/README.md
+!sim/*.sh
+!sim/Makefile
 
 # Results and logs generated during test runs (preserve directory via .gitkeep)
 results/*
@@ -77,3 +80,4 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
