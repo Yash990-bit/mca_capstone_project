@@ -13,3 +13,4 @@ module tb_2way;
     // - Main Memory Behavioral Model
     // - Test Sequences: Cold Miss, Repeated Hit, Conflict Miss, LRU Eviction
 endmodule
+

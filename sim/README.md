@@ -44,3 +44,4 @@ iverilog -g2001 -o ../build/sim_top.vvp ../rtl/*.v ../tb/tb_top.v
 # Execute
 vvp ../build/sim_top.vvp
 ```
+
