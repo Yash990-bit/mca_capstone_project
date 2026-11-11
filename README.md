@@ -132,14 +132,15 @@ Field:                  TAG (5 bits)                    |  LINE INDEX (3 bits)
   - Architectural requirements and signal definition ([`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md))
   - Team task breakdown and ownership ([`docs/TEAM_RESPONSIBILITIES.md`](docs/TEAM_RESPONSIBILITIES.md))
 - [ ] **Phase 2: Core RTL Development**
-  - Direct-mapped cache datapath and control unit
-  - 2-way set-associative cache datapath and dual tag comparators
-  - LRU replacement tracking logic and controller FSM
-  - 256 × 8-bit synchronous main memory behavioral model
+  - [x] Direct-mapped cache datapath and control unit ([`docs/DIRECT_MAPPED_CACHE.md`](docs/DIRECT_MAPPED_CACHE.md))
+  - [ ] 2-way set-associative cache datapath and dual tag comparators
+  - [ ] LRU replacement tracking logic and controller FSM
+  - [ ] 256 × 8-bit synchronous main memory behavioral model
 - [ ] **Phase 3: Verification & Testbench Implementation**
-  - Unit testbenches for individual cache modules
-  - Synthetic access pattern generators (thrashing, localized loops, sequential streams)
-  - Memory interaction assertions and latency monitors
+  - [x] Unit testbench for direct-mapped cache (`tb/tb_direct.v` - 31/31 tests passing)
+  - [ ] Unit testbenches for 2-way cache module
+  - [ ] Synthetic access pattern generators (thrashing, localized loops, sequential streams)
+  - [ ] Memory interaction assertions and latency monitors
 - [ ] **Phase 4: Comparative Simulation & Performance Analysis**
   - Execution of comparative simulation suites
   - Hit/miss rate extraction and conflict miss analysis
