@@ -1,0 +1,79 @@
+# ==============================================================================
+# Verilog / SystemVerilog Simulation & Synthesis Artifacts
+# ==============================================================================
+
+# Compiled simulation binaries and executables
+*.vvp
+*.out
+*.exe
+simv*
+*.daidir/
+csrc/
+
+# Waveform dump files (preserve directory via .gitkeep)
+waveforms/*
+!waveforms/.gitkeep
+*.vcd
+*.fst
+*.fsdb
+*.wlf
+*.ghw
+
+# ModelSim / QuestaSim artifacts
+work/
+transcript
+vsim.wlf
+*.mti
+*.mpf
+
+# Icarus Verilog temporary files
+*.ivl
+
+# Xilinx Vivado / ISE artifacts
+*.log
+*.jou
+*.str
+*.pb
+*.bit
+*.dcp
+.Xil/
+xsim.dir/
+xsim*.backup.*
+
+# Synopsys / Cadence EDA artifacts
+ucli.key
+INCA_libs/
+ncverilog.log
+ncverilog.key
+
+# Build and simulation temporary outputs (preserve directory via .gitkeep)
+build/*
+!build/.gitkeep
+sim/*
+!sim/.gitkeep
+
+# Results and logs generated during test runs (preserve directory via .gitkeep)
+results/*
+!results/.gitkeep
+
+# ==============================================================================
+# Operating System & Editor Artifacts
+# ==============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
