@@ -58,6 +58,7 @@ sim/*
 # Results and logs generated during test runs (preserve directory via .gitkeep)
 results/*
 !results/.gitkeep
+!results/sim_2way_keshav.log
 
 # ==============================================================================
 # Operating System & Editor Artifacts
