@@ -7,7 +7,7 @@
 IVERILOG ?= iverilog
 VVP      ?= vvp
 
-.PHONY: all direct sim_direct sim_2way clean help
+.PHONY: all direct sim_direct sim_2way sim_lru_fsm clean help
 
 all: direct
 
@@ -26,6 +26,13 @@ sim_2way:
 	$(IVERILOG) -g2001 -Wall -o build/sim_2way_keshav.vvp rtl/cache_2way.v rtl/lru_controller.v tb/tb_cache_2way_keshav.v
 	@echo ">>> Running 2-Way Set-Associative Cache Simulation..."
 	$(VVP) build/sim_2way_keshav.vvp | tee results/sim_2way_keshav.log
+
+sim_lru_fsm:
+	@mkdir -p build results waveforms
+	@echo ">>> Compiling LRU Controller & Cache FSM (Verilog-2001)..."
+	$(IVERILOG) -g2001 -Wall -o build/sim_lru_fsm.vvp rtl/lru_controller.v rtl/cache_fsm.v tb/tb_lru_fsm.v
+	@echo ">>> Running LRU & FSM Unit Simulation..."
+	$(VVP) build/sim_lru_fsm.vvp | tee results/sim_lru_fsm.log
 
 clean:
 	@rm -f build/*.vvp results/*.log waveforms/*.vcd
