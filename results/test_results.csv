@@ -1,0 +1,36 @@
+Cache Type,Test Name,Result
+2-Way Set-Associative,"T1: Cold read addr=0x00 is a MISS",PASS
+2-Way Set-Associative,"T1: Data returned from memory = 0x00",PASS
+2-Way Set-Associative,"T2: Second read addr=0x00 is a HIT",PASS
+2-Way Set-Associative,"T2: Cached data returned correctly = 0x00",PASS
+2-Way Set-Associative,"T3: Re-access of sets 1,2,3 all HIT",PASS
+2-Way Set-Associative,"T4a: addr=0x04 (Set 0, Tag 1) is a MISS",PASS
+2-Way Set-Associative,"T4b: Both conflicting lines coexist and HIT",PASS
+2-Way Set-Associative,"T5a: addr=0x08 is a MISS (triggers LRU eviction)",PASS
+2-Way Set-Associative,"T5b: addr=0x08 HITs after fill",PASS
+2-Way Set-Associative,"T5c: addr=0x00 still HITs (was MRU)",PASS
+2-Way Set-Associative,"T5d: addr=0x04 MISSes (was LRU victim, evicted)",PASS
+2-Way Set-Associative,"T6: Invalid-way preference: both lines cached and HIT",PASS
+2-Way Set-Associative,"T7a: Write to cached addr=0x00 is a WRITE HIT",PASS
+2-Way Set-Associative,"T7b: Write-through: memory[0x00] = 0xAB",PASS
+2-Way Set-Associative,"c: Read after write returns 0xAB (latched during resp_valid)",PASS
+2-Way Set-Associative,"T7d: Write to uncached addr=0x10 is a WRITE MISS",PASS
+2-Way Set-Associative,"T7e: Write-miss: memory[0x10] = 0xCD (write-through)",PASS
+2-Way Set-Associative,"T8: After reset, addr=0x00 MISSes (valid bits cleared)",PASS
+Direct-Mapped,"T1: Cold read addr=0x00 is a MISS",PASS
+Direct-Mapped,"T1: Data returned from memory = 0x00",PASS
+Direct-Mapped,"T2: Second read addr=0x00 is a HIT",PASS
+Direct-Mapped,"T2: Cached data returned correctly = 0x00",PASS
+Direct-Mapped,"T3: Re-access of lines 1,2,3 all HIT",PASS
+Direct-Mapped,"T4a: addr=0x08 (Line 0, Tag 1) is a MISS (evicts 0x00)",PASS
+Direct-Mapped,"Ses again (evicted by conflict — direct-mapped limitation)",PASS
+Direct-Mapped,"conflict: 1 initial hit then 7 MISSes (thrashing confirmed)",PASS
+Direct-Mapped,"t addr=0x08 always MISSes (direct-mapped evicts immediately)",PASS
+Direct-Mapped,"T6b: addr=0x00 evicted by 0x08, MISSes again",PASS
+Direct-Mapped,"T7a: Write to cached addr=0x00 is a WRITE HIT",PASS
+Direct-Mapped,"T7b: Write-through: memory[0x00] = 0xAB",PASS
+Direct-Mapped,"T7c: Read after write returns 0xAB",PASS
+Direct-Mapped,"T7d: Write to uncached addr=0x10 is a WRITE MISS",PASS
+Direct-Mapped,"T7e: Write-miss: memory[0x10] = 0xCD (write-through)",PASS
+Direct-Mapped,"te-allocate: addr=0x00 still cached after write-miss at 0x10",PASS
+Direct-Mapped,"T8: After reset, addr=0x00 MISSes (valid bits cleared)",PASS

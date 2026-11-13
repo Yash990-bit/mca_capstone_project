@@ -1,0 +1,9 @@
+Trace,Cache Type,Total Requests,Hits,Misses,Hit Rate (%),Miss Rate (%)
+Sequential,2-Way Set-Associative,16,8,8,50,50
+Sequential,Direct-Mapped,16,8,8,50,50
+Repeated,2-Way Set-Associative,8,7,1,87,12
+Repeated,Direct-Mapped,8,7,1,87,12
+Conflict,2-Way Set-Associative,12,0,12,0,100
+Conflict,Direct-Mapped,12,0,12,0,100
+Mixed,2-Way Set-Associative,10,5,5,50,50
+Mixed,Direct-Mapped,10,3,7,30,70

@@ -1,0 +1,65 @@
+VCD info: dumpfile waveforms/wave_2way.vcd opened for output.
+=============================================================
+ 2-WAY SET-ASSOCIATIVE CACHE TESTBENCH  (tb_2way.v)
+=============================================================
+
+--- TEST 1: Cold Cache Access ---
+  [PASS] T1: Cold read addr=0x00 is a MISS
+  [PASS] T1: Data returned from memory = 0x00
+
+--- TEST 2: Repeated Access (Cache Hit After Fill) ---
+  [PASS] T2: Second read addr=0x00 is a HIT
+  [PASS] T2: Cached data returned correctly = 0x00
+
+--- TEST 3: Sequential Access Pattern ---
+  [PASS] T3: Re-access of sets 1,2,3 all HIT
+
+--- TEST 4: Conflict Access (Same Set, Different Tags) ---
+  [PASS] T4a: addr=0x04 (Set 0, Tag 1) is a MISS
+  [PASS] T4b: Both conflicting lines coexist and HIT
+
+--- TEST 5: LRU Replacement ---
+  [PASS] T5a: addr=0x08 is a MISS (triggers LRU eviction)
+  [PASS] T5b: addr=0x08 HITs after fill
+  [PASS] T5c: addr=0x00 still HITs (was MRU)
+  [PASS] T5d: addr=0x04 MISSes (was LRU victim, evicted)
+
+--- TEST 6: Invalid-Way Preference After Reset ---
+  [PASS] T6: Invalid-way preference: both lines cached and HIT
+
+--- TEST 7: Write Operations ---
+  [PASS] T7a: Write to cached addr=0x00 is a WRITE HIT
+  [PASS] T7b: Write-through: memory[0x00] = 0xAB
+  [PASS] c: Read after write returns 0xAB (latched during resp_valid)
+  [PASS] T7d: Write to uncached addr=0x10 is a WRITE MISS
+  [PASS] T7e: Write-miss: memory[0x10] = 0xCD (write-through)
+
+--- TEST 8: Reset Clears Cache State ---
+  [PASS] T8: After reset, addr=0x00 MISSes (valid bits cleared)
+
+--- PERF TRACE: Sequential Access ---
+  Sequential | Req=16  Hits=8  Misses=8  HitRate=50%  MissRate=50%
+
+--- PERF TRACE: Repeated Access ---
+  Repeated   | Req=8  Hits=7  Misses=1  HitRate=87%  MissRate=12%
+
+--- PERF TRACE: Conflict-Heavy Access ---
+  Conflict   | Req=12  Hits=0  Misses=12  HitRate=0%  MissRate=100%
+
+--- PERF TRACE: Mixed Access ---
+  Mixed      | Req=10  Hits=5  Misses=5  HitRate=50%  MissRate=50%
+
+=============================================================
+ 2-WAY CACHE — OVERALL RESULTS
+  Total Requests : 71
+  Cache Hits     : 33
+  Cache Misses   : 38
+  Hit  Rate      : 46%
+  Miss Rate      : 53%
+  Tests PASSED   : 18
+  Tests FAILED   : 0
+=============================================================
+
+ALL TESTS PASSED — 2-way cache verification COMPLETE.
+
+tb/tb_2way.v:460: $finish called at 3735000 (1ps)
